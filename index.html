@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Portal - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>Debark University</h2>
+      <p>Student Portal Login</p>
+    </div>
+    
+    <form id="loginForm">
+      <div class="input-field">
+        <label for="studentId">Student ID Number</label>
+        <input type="text" id="studentId" placeholder="e.g., dbu1701103" required>
+      </div>
+      
+      <div class="input-field">
+        <label for="password">Portal Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+      
+      <button type="submit" class="btn-login">Login to Portal</button>
+    </form>
+    
+    <div class="login-footer">
+      <p>New Student? <a href="register.html">Create an Account</a></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

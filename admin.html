@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" style="background: #0f172a;">
+      <div class="sidebar-brand">
+        <h3>DKU Admin Panel</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="menu-item active" data-target="manage-students"><a href="#">Manage Students</a></li>
+        <li class="menu-item" data-target="add-courses"><a href="#">Add New Courses</a></li>
+        <li class="menu-item" data-target="grade-management"><a href="#">Grade Management</a></li>
+        <li class="logout"><a href="index.html">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="main-header">
+        <h2>Registrar Control Dashboard</h2>
+        <div class="user-profile" style="background: #ec4899; color: white; padding: 5px 10px; border-radius: 5px;">Role: Registrar</div>
+      </header>
+
+      <div id="manage-students" class="tab-content active">
+        <div class="info-grid">
+          <div class="info-card">
+            <h4>Total Registered Students</h4>
+            <p class="number" id="totalStudents">1</p>
+          </div>
+          <div class="info-card">
+            <h4>Pending Applications</h4>
+            <p class="number" style="color: #ea580c;">0</p>
+          </div>
+        </div>
+
+        <section class="table-section">
+          <h3>Registered Students List</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Student ID</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody">
+              </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="add-courses" class="tab-content">
+        <section class="table-section" style="max-width: 500px;">
+          <h3>Add New Course to Portal</h3>
+          <p style="color: #6b7280; margin-bottom: 15px;">ለተማሪዎች የሚሰጥ አዲስ ኮርስ እዚህ ይጨምሩ፡</p>
+          <form id="addCourseForm">
+            <div class="input-field" style="margin-bottom: 1rem;">
+              <label>Course Code</label>
+              <input type="text" id="newCourseCode" placeholder="e.g., CoSc3012" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="input-field" style="margin-bottom: 1rem;">
+              <label>Course Title</label>
+              <input type="text" id="newCourseTitle" placeholder="e.g., Computer Security" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="input-field" style="margin-bottom: 1.5rem;">
+              <label>Credit Hours</label>
+              <input type="number" id="newCourseCredit" placeholder="e.g., 3" min="1" max="5" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px;">Add Course</button>
+          </form>
+        </section>
+      </div>
+
+      <div id="grade-management" class="tab-content">
+        <section class="table-section" style="max-width: 500px;">
+          <h3>Assign Student Grades</h3>
+          <p style="color: #6b7280; margin-bottom: 15px;">ለተማሪው ID ቁጥር በመስጠት ውጤት መሙያ ሰሌዳ፡</p>
+          <form id="assignGradeForm">
+            <div class="input-field" style="margin-bottom: 1rem;">
+              <label>Student ID</label>
+              <input type="text" id="gradeStudentId" placeholder="e.g., dku1701103" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+            </div>
+            <div class="input-field" style="margin-bottom: 1rem;">
+              <label>Select Course Code</label>
+              <select id="gradeCourseCode" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; background: white;">
+                <option value="CoSc1011">CoSc1011 (Intro to CS)</option>
+                <option value="Math1012">Math1012 (Freshman Math)</option>
+                <option value="EnLa1011">EnLa1011 (Communicative English)</option>
+              </select>
+            </div>
+            <div class="input-field" style="margin-bottom: 1.5rem;">
+              <label>Select Grade</label>
+              <select id="assignedLetter" required style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px; background: white;">
+                <option value="A">A</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="F">F</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-login" style="width: auto; padding: 10px 25px; background: #059669;">Save Grade</button>
+          </form>
+        </section>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+/* ገጾችን መደበቂያ እና ማሳያ ህግ */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.sidebar-menu li {
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Login Page Styles */
+.login-body {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  color: #1e3a8a;
+  font-size: 1.8rem;
+}
+
+.login-header p {
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+.input-field {
+  margin-bottom: 1.2rem;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input-field input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 0.8rem;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-login:hover {
+  background: #1d4ed8;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.login-footer a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background: #f3f4f6;
+}
+
+.sidebar {
+  width: 260px;
+  background: #1e3a8a;
+  color: white;
+  padding: 1.5rem;
+}
+
+.sidebar-brand h3 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.sidebar-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+  color: #d1d5db;
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.sidebar-menu li.active a, .sidebar-menu a:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.sidebar-menu li.logout a {
+  background: #dc2626;
+  color: white;
+  margin-top: 5rem;
+}
+
+.sidebar-menu li.logout a:hover {
+  background: #b91c1c;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-card h4 {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.info-card .number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e3a8a;
+}
+
+.info-card .status {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.table-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table-section h3 {
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table th {
+  background: #f9fafb;
+  color: #4b5563;
+}
