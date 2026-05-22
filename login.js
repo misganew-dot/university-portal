@@ -2,27 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
 
   if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
+    loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const inputId = document.getElementById('studentId').value.trim().toLowerCase();
-      const inputPassword = document.getElementById('password').value;
+      const studentIdInput = document.getElementById('studentId').value.trim();
+      const passwordInput = document.getElementById('password').value.trim();
 
-      // 🔥 1. የአድሚን/ሬጅስትራር መግቢያ ሚስጥር (Admin Credentials)
-      if (inputId === 'admin123' && inputPassword === 'adminpass') {
+      // 1. መጀመሪያ አድሚን መሆኑን ማረጋገጥ (ይህ ሚስጥር ነው፣ alert ውስጥ አይፃፍም!)
+      if (studentIdInput === 'admin123' && passwordInput === 'adminpass') {
         window.location.href = 'admin.html';
-        return; // እዚህ ላይ ኮዱን ያቆማል
+        return;
       }
 
-      // 2. የተማሪ መረጃዎችን ከማህደር መፈለግ
+      // 2. ተማሪው በማህደር (LocalStorage) መኖሩን መፈለግ
       const savedId = localStorage.getItem('savedStudentId');
       const savedPassword = localStorage.getItem('savedPassword');
 
-      // 3. የተማሪውን መረጃ ማመሳከር
-      if (savedId && inputId === savedId.toLowerCase() && inputPassword === savedPassword) {
+      if (savedId && studentIdInput.toLowerCase() === savedId.toLowerCase() && passwordInput === savedPassword) {
+        // መረጃው ልክ ከሆነ ወደ ተማሪ ዳሽቦርድ ማስገባት
         window.location.href = 'dashboard.html';
       } else {
-        alert("ስህተት፡ ያስገቡት ID ወይም ፓስወርድ አልተገኘም! (ለአድሚን መግቢያ admin123 እና adminpass ይጠቀሙ)");
+        // 🔥 ስህተት ከሆነ ለተማሪው የሚመጣው ንፁህ መልዕክት (የአድሚን ሚስጥር እዚህ አይጠቀስም!)
+        alert('ስህተት፡ ያስገቡት የተማሪ ID ቁጥር ወይም ፓስወርድ ትክክል አይደለም። እባክዎ እንደገና ይሞክሩ!');
       }
     });
   }
